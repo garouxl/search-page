@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Webmotors é o maior e melhor site para comprar, vender, financiar, fazer seguro e saber tudo sobre veículos. Líder do segmento!" />
+    <title>Webmotors | prova front-end</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" async="async" src="js/dom.js"></script>
+    <script type="text/javascript" async="async" src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <header class="header">
+        <a href="index.html" title="webmotors logo">
+          <img
+            srcset="img/logo-1x.jpg 1x, img/logo-2x.jpg 2x"
+            alt="webmotors logo" title="webmotors logo"
+            src="img/logo-2x.jpg"
+            role="img" aria-label="webmotors logo"
+          >
+        </a>
+      </header>
+      <main id="main">
+        <section class="container">
+          <a href="#sellCar" class="button button--sell-car float-right">Vender meu carro</a>
+          <ul class="tab clearfix">
+            <li class="tab__nav-item active" data-js="tab">
+              <div class="tab__tab-icon tab__tab-icon--car"></div>
+              <p class="tab__buy">comprar</p>
+              <p class="tab__type">carros</p>
+            </li>
+            <li class="tab__nav-item" data-js="tab">
+              <div class="tab__tab-icon tab__tab-icon--bike"></div>
+              <p class="tab__buy">comprar</p>
+              <p class="tab__type">motos</p>
+            </li>
+          </ul>
+        </section>
+        <section class="container">
+          <form class="form clearfix" data-js="form">
+            <fieldset>
+              <legend class="visually-hidden">Condição do veículo</legend>
+              <div class="form__group form__group--condition">
+                <label tabindex="1" class="form__label-check" for="novos">
+                <input class="form__check-box" id="novos" type="checkbox" title="carros novos" aria-checked="true"/>
+                Novos
+                </label>
+                <label class="form__label-check" for="usados">
+                <input class="form__check-box" id="usados" type="checkbox" title="carros velhos" aria-checked="true"/>
+                Usados
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form__texts">
+              <legend class="visually-hidden">Localização, ano e faixa de preço</legend>
+              <div class="form__group form__group--where">
+                <input class="form__input" id="onde" data-js="" type="text" maxlength="28" />
+                <label class="form__label" for="onde">Onde:</label>
+                <i class="form__icon-where" aria-hidden="true"></i>
+              </div>
+              <div class="form__group form__group--radius">
+                <select class="form__select" id="radio">
+                  <optgroup>
+                    <option class="form__option" value="0">100km</option>
+                    <option class="form__option" value="1">999km</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="raio">Raio:</label>
+              </div>
+              <div class="form__group form__group--year">
+                <select class="form__select" id="ano">
+                  <optgroup>
+                    <option class="form__option" value="1">1980</option>
+                    <option class="form__option" value="2">2015</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="ano">Ano desejado:</label>
+              </div>
+              <div class="form__group form__group--price">
+                <select class="form__select" id="preco">
+                  <optgroup>
+                    <option class="form__option" selected value="1">2500-1000</option>
+                    <option class="form__option" selected value="1">1000-9000</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="preco">Faixa de preço:</label>
+              </div>
+            </fieldset>
+            <fieldset class="form__texts">
+              <legend class="visually-hidden">Marca, modelo e versão</legend>
+              <div class="form__group form__group--brand">
+                <select disabled class="form__select" id="marca" data-js="brand" data-target="model">
+                  <optgroup>
+                    <option class="form__option" selected value="0">Todas</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="marca">Marca:</label>
+              </div>
+              <div class="form__group form__group--model">
+                <select disabled class="form__select" id="modelo" data-js="model" data-target="version">
+                  <optgroup>
+                      <option class="form__option" selected value="0">Todas</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="modelo">Modelo:</label>
+              </div>
+              <div class="form__group form__group--version">
+                <select disabled class="form__select" placeholder="teste" id="versão" data-js="version">
+                  <optgroup>
+                      <option class="form__option" selected value="0">Todos</option>
+                  </optgroup>
+                </select>
+                <label class="form__label" for="versão">Versão:</label>
+              </div>
+            </fieldset>
+            <fieldset class="form__buttons">
+              <legend class="visually-hidden">Ações</legend>
+              <a href="#advancedSearch" class="button button--advanced-search float-left">Busca Avançada</a>
+              <div class="form_group form__group--cta-buttons clearfix">
+                <a href="#reset" class="button button--reset float-left" data-js="reset" type="text">Limpar Filtros</a>
+                <button disabled class="button button--search float-right" data-js="search" type="submit">Ver Ofertas</button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

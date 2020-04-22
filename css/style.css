@@ -1,0 +1,499 @@
+/* reset e tags inciais*/
+
+*,
+*::after,
+*::before {
+  margin:0;
+  padding:0;
+  border: 0;
+  box-sizing: inherit;
+  outline: 0;
+  backface-visibility: hidden;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+*::selection{
+  background-color: transparent;
+}
+
+html {
+  /* 1rem === 10px */
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  color: #666;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* helpers */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.float-left {
+  float: left
+}
+
+.float-right {
+  float: right
+}
+
+.visually-hidden {
+  /* visivel para screen readers */
+  position:absolute;
+  left:-1100rem;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* estrutura */
+
+.wrapper {
+    max-width: 93.3rem;
+    margin: 0 auto;
+}
+
+.header {
+  height: 9.4rem;
+}
+
+.container {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+/* botões e links*/
+
+.button {
+  cursor: pointer;
+  border-radius: 3px;
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  word-spacing: 1px;
+  transition: text-shadow .2s, transform .2s, box-shadow .2s, background-color .2s;
+}
+
+.button::selection {
+  background: transparent;
+}
+
+.button--sell-car {
+  border: 2px solid #a15b00;
+  font-size: .8em;
+  color: #a15b00;
+  line-height: 1.1;
+  padding: 1rem 0;
+  height: 3.8rem;
+  width: 18.8rem;
+}
+
+.button--search  {
+  background-color: #c71b25;
+  font-size: 1.3em;
+  color: #fff;
+  line-height: 1.4;
+  text-transform: uppercase;
+  height: 4.8rem;
+  width: 29.8rem;
+}
+
+.button--advanced-search {
+  background: url("../img/sprite.png") no-repeat scroll -19.8rem -13.7rem transparent;
+  font-size: 1.1em;
+  color: #c71b25;
+  padding: 0 0 0 1rem;
+  margin: 1.3rem 0 0;
+}
+
+.button--reset {
+  color: #666;
+  font-size: 1.1em;
+  font-weight: 400;
+  margin: 1.4rem 1.4rem 0 0;
+}
+
+.button--sell-car:hover,
+.button--search:hover  {
+  box-shadow: 0 4px 8px rgba(117, 117, 117, .5);
+  transform: translateY(-4px);
+}
+
+.button--sell-car:active,
+.button--search:active,
+.button--sell-car:focus,
+.button--search:focus {
+  box-shadow: 0 2px 4px rgba(117, 117, 117, .8);
+  transform: translateY(-2px);
+}
+
+.button--reset:hover,
+.button--advanced-search:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 4px 5px rgba(117, 117, 117, .8);
+}
+
+.button--reset:active,
+.button--advanced-search:active,
+.button--reset:focus,
+.button--advanced-search:focus  {
+  transform: translateY(-1px);
+  text-shadow: 0 1px 2px rgba(117, 117, 117, .8);
+}
+
+.button[disabled] {
+ background-color: #666;
+ cursor: not-allowed;
+}
+
+.button[disabled]:active,
+.button[disabled]:focus,
+.button[disabled]:hover {
+  box-shadow: 0 0 0;
+  transform: translateY(0);
+}
+
+
+
+/* tabs e cta */
+
+.tab {
+    float: left;
+    margin: 3px 0 0;
+}
+
+.tab__nav-item {
+    float: left;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 5rem;
+    width: 17.7rem;
+    border-bottom: 3px solid #888
+}
+
+.tab__nav-item *::selection { background: transparent }
+
+.tab__nav-item.active {
+    border-bottom: 3px solid #c6121d
+}
+
+.tab__tab-icon {
+    float: left;
+    margin: 0 0 0 1.5rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.tab__tab-icon--car {
+    background: url("../img/sprite.png") no-repeat scroll -5.1rem -4.5rem transparent
+}
+
+.tab__nav-item.active .tab__tab-icon--car {
+    background: url("../img/sprite.png") no-repeat scroll 0 -4.5rem transparent
+}
+
+.tab__nav-item .tab__tab-icon--bike {
+    background: url("../img/sprite.png") no-repeat scroll -17rem -4.5rem transparent;
+    width: 37px
+}
+
+.tab__nav-item.active .tab__tab-icon--bike {
+    background: url("../img/sprite.png") no-repeat scroll -11.9rem -4.5rem transparent
+}
+
+.tab__buy,
+.tab__type {
+    margin: 0 0 0 5px;
+}
+
+.tab__buy {
+    font-size: 0.65em;
+    letter-spacing: 0;
+    line-height: 1.1em;
+
+}
+
+.tab__type {
+    font-size: 1.4em;
+    line-height: 1.1em;
+    letter-spacing: 0;
+}
+
+.tab__nav-item.active .tab__type {
+  color: #c6121d
+}
+
+ /* formulario */
+
+.form {
+    padding: 2.7rem 5rem 2.5rem 5.2rem;
+    background-color: #fff;
+    font-size: .8em;
+    height: 31.2rem;
+    max-width: 93.3rem;
+}
+
+.form__texts {
+    margin-right: .5%;
+    margin-bottom: .8rem;
+    float: left;
+    width: 49%;
+}
+.form__texts + .form__texts {
+    margin-left: 1%;
+    margin-right: 0;
+}
+
+.form__buttons {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.form__group {
+  float: left;
+  position: relative;
+  margin: 0 0 1.2rem;
+}
+
+.form__label-check {
+  cursor: pointer;
+  margin: 0 3.6rem 0 0;
+}
+
+.form__check-box {
+  cursor: pointer;
+  background: transparent;
+  pointer-events: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 5px;
+  color: #888;
+  font-size: 1.2rem;
+  -webkit-appearance: none;
+  outline: 0;
+  border-radius: 3px;
+  border: 1px solid #888;
+  padding: 0;
+  transition: .2s border, box-shadow .2s;
+}
+
+.form__check-box::before {
+  display: inline-block;
+  content: '';
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 4px;
+  background-image: url("../img/sprite.png");
+  background-position: 20rem 20rem;
+  background-repeat: no-repeat;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.form__check-box:checked::before {
+    background-position: 2px -14rem;
+}
+
+.form__check-box:focus::before {
+    border-color: #888;
+}
+
+.form__label {
+    cursor: pointer;
+    background: transparent;
+    line-height: 1rem;
+    padding: 0px 3px;
+    transform: translate(5px, 1.4rem);
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.form__input,
+.form__select {
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 3px;
+    outline: 0;
+    height: 3.8rem;
+    width: 100%;
+    transition: .2s border, box-shadow .2s;
+}
+
+.form__check-box:hover,
+.form__check-box:focus,
+.form__input:hover,
+.form__input:focus,
+.form__select:hover,
+.form__select:focus {
+  border: 1px solid #111;
+  box-shadow: 0 0 .5rem rgba(117, 117, 117, .5);
+}
+
+.form__select[disabled] {
+  color: #ddd;
+  cursor: not-allowed;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 0;
+}
+
+.form__select[disabled] + label {
+  color: #ddd;
+  cursor: not-allowed;
+}
+
+.form__group--where { width: 30rem; }
+.form__group--radius { width: 10.6rem; }
+.form__group--year { width: 19.6rem; margin: 0 1.3rem 0 0; }
+.form__group--price { width: 19.6rem; }
+.form__group--brand { width: 19.6rem; margin: 0 1.3rem 0 0; }
+.form__group--model { width: 19.6rem; }
+.form__group--version { width: 100%; }
+
+.form__group--where .form__input {
+    padding-left: 8rem;
+    padding-right: 5px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.form__group--where .form__icon-where {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: url("../img/sprite.png") no-repeat scroll -17.8rem -10.9rem transparent;
+}
+
+.form__group--where .form__label { transform: translate(3.2rem, 1.4rem); }
+.form__group--where .form__input { border-right-width: 1px; }
+
+.form__group--radius .form__select {
+    padding-left: 3.9rem;
+    border-left-width: 1px;
+    border-radius: 0px 3px 3px 0px; }
+.form__group--year .form__select { padding-left: 9.8rem; }
+.form__group--price .form__select { padding-left: 10.4rem; }
+.form__group--brand .form__select { padding-left: 5.1rem; }
+.form__group--model .form__select { padding-left: 5.7rem; }
+.form__group--version .form__select { padding-left: 5.5rem; }
+
+.form__group--cta-buttons {
+  float: right;
+  margin: 0 4px 0 6px;
+}
+
+@media (max-width: 930px) {
+    .form__texts {
+        float: none;
+        margin: 0 0 0;
+        width: 100%;
+    }
+
+    .form__texts + .form__texts {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .form__group--where { width: 75%; }
+    .form__group--radius { width: 25%; }
+    .form__group--year { width: 48%; margin: 0 2% 0 0; clear: both}
+    .form__group--price { width: 50%; }
+    .form__group--brand { width: 48%; margin: 0 2% 0 0; }
+    .form__group--model { width: 50%; }
+    .form__group--version { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .button--sell-car {
+    float: none;
+    margin: 0 auto 10px;
+    width: 98%;
+  }
+
+  .tab {
+      float: none;
+      margin: 3px auto 0;
+      width: 100%;
+  }
+
+  .tab__nav-item {
+    width: 50%;
+  }
+
+  .form {
+    padding: 25px 20px 10px;
+    max-width: none;
+    height: 100%;
+  }
+}
+
+/* 1em = 16px */
+@media (max-width: 31.25em) { /* 500px */
+  .form__buttons-group {
+      float: none;
+      margin: 1rem .6rem;
+  }
+
+  .button--reset {
+      float: right;
+      margin: 3px 0 1rem;
+
+  }
+
+  .button--search {
+      padding: 1.4rem 0;
+      width: 100%;
+  }
+
+  .button--advanced-search {
+    margin: 3px 0 0;
+  }
+}
+
+@media (max-width: 26.87em) { /* 430px */
+  .form__group--where .form__label,
+  .form__label {
+      transform: translate(5px, -.6rem);
+      background: #fff;
+  }
+
+  .form__group--where .form__input {
+      padding-left: 3.5rem;
+  }
+
+  .form__group--radius .form__select,
+  .form__group--year .form__select,
+  .form__group--price .form__select,
+  .form__group--brand .form__select,
+  .form__group--model .form__select,
+  .form__group--version .form__select {
+      padding-left: 5px;
+  }
+}
